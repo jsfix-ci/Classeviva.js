@@ -70,7 +70,9 @@ class Classeviva {
                 pass: password,
             };
     
-            const response: Response = await fetch(`${this.#baseUrl}/auth/login/`, {
+            const response: Response = await /* TODO: JSFIX could not patch the breaking change:
+            req.body can no longer be a string*/
+            fetch(`${this.#baseUrl}/auth/login/`, {
                 method: "POST",
                 headers: this.#headers,
                 body: JSON.stringify(userData),
